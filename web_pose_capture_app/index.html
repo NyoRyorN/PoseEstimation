@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Pose Capture</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="capture-surface" aria-label="Pose capture">
+        <video id="cameraVideo" class="camera-video" playsinline muted></video>
+        <canvas id="overlayCanvas" class="overlay-canvas"></canvas>
+
+        <div class="top-panel">
+          <div>
+            <h1>Web Pose Capture</h1>
+            <p id="statusText">Loading model</p>
+          </div>
+          <div class="stats-grid" aria-label="Capture statistics">
+            <span>Pose FPS</span>
+            <strong id="poseFps">0.0</strong>
+            <span>Frames</span>
+            <strong id="frameCount">0</strong>
+            <span>Detected</span>
+            <strong id="detectionRate">0%</strong>
+          </div>
+        </div>
+
+        <div class="bottom-panel">
+          <button id="recordButton" class="primary-button" type="button" disabled>
+            <span id="recordIcon" class="record-dot"></span>
+            <span id="recordLabel">Start</span>
+          </button>
+          <button id="switchButton" class="icon-button" type="button" disabled title="Switch camera">
+            &#8646;
+          </button>
+          <button id="downloadButton" class="icon-button" type="button" disabled title="Download last session">
+            &#10515;
+          </button>
+          <div class="elapsed" id="elapsedTime">00:00</div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
