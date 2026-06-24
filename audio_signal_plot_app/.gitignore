@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+localhost-cert.pem
+localhost-key.pem
+*.pem
